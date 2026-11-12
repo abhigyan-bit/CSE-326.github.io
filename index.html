@@ -26,7 +26,7 @@
     <div class="login-brand-mobile"><a class="brand-lockup" href="index.html" aria-label="LocalVibe home"><svg class="brand-bag" viewBox="0 0 64 64" role="img" aria-label="LocalVibe shopping bag logo"><path d="M17 20h30l4 35H13l4-35Z" fill="#7132c8"/><path d="M23 22v-7a9 9 0 0 1 18 0v7" fill="none" stroke="#7132c8" stroke-width="5" stroke-linecap="round"/><path d="M32 44s-11-6.7-11-13.2a6.2 6.2 0 0 1 11-3.9 6.2 6.2 0 0 1 11 3.9C43 37.3 32 44 32 44Z" fill="#fff"/></svg><span class="brand-name">Local<span>Vibe</span></span></a></div>
     <div class="login-box">
       <div class="login-heading"><div class="login-symbol">♙</div><p class="eyebrow">WELCOME BACK</p><h2>Vendor Login</h2><p class="login-subtitle">Sign in to manage your LocalVibe store.</p></div>
-      <form action="vendor-dashboard.html" method="get">
+      <form id="loginForm">
         <label for="account-type">Account Type</label>
         <select id="account-type" name="account-type"><option>Vendor Account</option></select>
         <label for="email">Email Address</label>
@@ -37,10 +37,11 @@
       </form>
       <div class="login-divider"><span>NEW TO LOCALVIBE?</span></div>
       <a class="signup-link" href="vendor-signup.html">Register as a Vendor <span>→</span></a>
-      <p class="login-demo">This is a frontend college project demo. Login details are not verified or stored.</p>
+      <p class="login-demo">Beginner-level frontend demo. Create an account first to try login.</p>
     </div>
     <p class="login-footer">© 2026 LocalVibe. All rights reserved.</p>
   </section>
 </main>
+<script src="auth.js"></script>
 </body>
 </html>
