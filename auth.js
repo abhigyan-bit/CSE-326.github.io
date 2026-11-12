@@ -24,6 +24,7 @@ if (signupForm) {
 
     localStorage.setItem("localVibeVendor", JSON.stringify(vendor));
     localStorage.setItem("localVibeVendorName", vendor.name);
+    localStorage.setItem("localVibeVendorEmail", vendor.email);
     alert("Registration successful! Welcome to LocalVibe.");
     window.location.href = "vendor-dashboard.html";
   });
@@ -47,6 +48,7 @@ if (loginForm) {
 
       if (email === vendor.email && password === vendor.password) {
         localStorage.setItem("localVibeVendorName", vendor.name);
+        localStorage.setItem("localVibeVendorEmail", vendor.email);
         window.location.href = "vendor-dashboard.html";
       } else {
         alert("Email or password is incorrect.");
@@ -72,5 +74,6 @@ const logoutLink = document.getElementById("logoutLink");
 if (logoutLink) {
   logoutLink.addEventListener("click", function () {
     localStorage.removeItem("localVibeVendorName");
+    localStorage.removeItem("localVibeVendorEmail");
   });
 }
