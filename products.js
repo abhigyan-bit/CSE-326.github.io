@@ -1,5 +1,17 @@
 const productForm = document.getElementById("productForm");
 
+function safeText(value) {
+    return String(value).replace(/[&<>"']/g, function (letter) {
+        return {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+        }[letter];
+    });
+}
+
 function showProducts() {
     const products = JSON.parse(localStorage.getItem("localVibeProducts")) || [];
     const vendorEmail = localStorage.getItem("localVibeVendorEmail");
@@ -22,12 +34,12 @@ function showProducts() {
         productsList.innerHTML +=
             '<tr>' +
             '<td><img class="product-thumb" src="' + product.image + '" alt="Product photo"></td>' +
-            '<td>' + product.name + '</td>' +
-            '<td>' + product.category + '</td>' +
-            '<td>₹' + product.price + '</td>' +
-            '<td>' + product.quantity + '</td>' +
-            '<td>' + product.condition + '</td>' +
-            '<td>' + product.delivery + '</td>' +
+            '<td>' + safeText(product.name) + '</td>' +
+            '<td>' + safeText(product.category) + '</td>' +
+            '<td>₹' + safeText(product.price) + '</td>' +
+            '<td>' + safeText(product.quantity) + '</td>' +
+            '<td>' + safeText(product.condition) + '</td>' +
+            '<td>' + safeText(product.delivery) + '</td>' +
             '<td><span class="status">Active</span></td>' +
             '</tr>';
     });
@@ -41,13 +53,13 @@ if (productForm) {
 
         const imageFile = document.getElementById("image").files[0];
 
-        if (!imageFile) {
-            alert("Please select a product photo.");
+        if (!imageFile || !imageFile.type.startsWith("image/")) {
+            alert("Please select a valid product photo.");
             return;
         }
 
-        if (imageFile.size > 1500000) {
-            alert("Please choose an image smaller than 1.5 MB.");
+        if (imageFile.size > 700000) {
+            alert("Please choose an image smaller than 700 KB.");
             return;
         }
 
@@ -69,11 +81,15 @@ if (productForm) {
 
             const products = JSON.parse(localStorage.getItem("localVibeProducts")) || [];
             products.push(product);
-            localStorage.setItem("localVibeProducts", JSON.stringify(products));
 
-            alert("Product added successfully!");
-            productForm.reset();
-            showProducts();
+            try {
+                localStorage.setItem("localVibeProducts", JSON.stringify(products));
+                alert("Product added successfully!");
+                productForm.reset();
+                showProducts();
+            } catch (error) {
+                alert("Storage is full. Please use a smaller photo.");
+            }
         };
 
         reader.readAsDataURL(imageFile);
