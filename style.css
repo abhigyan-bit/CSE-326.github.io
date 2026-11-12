@@ -1177,3 +1177,22 @@ body:has(#theme-toggle:checked) .status {
     background: #23412d;
     color: #b8f0c5;
 }
+
+
+/* Show password checkbox */
+.show-password {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    margin: 10px 0 16px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.show-password input {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    accent-color: #7132c8;
+}
