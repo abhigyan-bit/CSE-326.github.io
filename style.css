@@ -1021,3 +1021,122 @@ footer a {
 #productsList td {
     vertical-align:middle
 }
+
+
+/* CSS-only dark and light mode */
+.theme-checkbox {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.theme-button {
+    position: fixed;
+    top: 15px;
+    right: 18px;
+    z-index: 1000;
+    padding: 9px 14px;
+    border: 1px solid #d9cbe9;
+    border-radius: 22px;
+    background: white;
+    color: #32175c;
+    font-size: 13px;
+    cursor: pointer;
+    box-shadow: 0 3px 12px #24163b18;
+}
+
+.theme-checkbox:focus + .theme-button {
+    outline: 2px solid #7132c8;
+    outline-offset: 3px;
+}
+
+body:has(#theme-toggle:checked) {
+    background: #171421;
+    color: #eee8f7;
+}
+
+body:has(#theme-toggle:checked) .login-shell,
+body:has(#theme-toggle:checked) .login-side,
+body:has(#theme-toggle:checked) .auth-card,
+body:has(#theme-toggle:checked) .entry-card,
+body:has(#theme-toggle:checked) .card,
+body:has(#theme-toggle:checked) .panel,
+body:has(#theme-toggle:checked) .form,
+body:has(#theme-toggle:checked) .tablebox,
+body:has(#theme-toggle:checked) header,
+body:has(#theme-toggle:checked) .stat {
+    background: #242033;
+    color: #eee8f7;
+    border-color: #403653;
+}
+
+body:has(#theme-toggle:checked) .login-screen,
+body:has(#theme-toggle:checked) .vendor-entry {
+    background: #171421;
+    color: #eee8f7;
+}
+
+body:has(#theme-toggle:checked) .login-promo {
+    background: linear-gradient(145deg, #302342, #28203a 60%, #211c32);
+}
+
+body:has(#theme-toggle:checked) .title,
+body:has(#theme-toggle:checked) .hero,
+body:has(#theme-toggle:checked) .feature,
+body:has(#theme-toggle:checked) .stat {
+    background: #302840;
+}
+
+body:has(#theme-toggle:checked) h1,
+body:has(#theme-toggle:checked) h2,
+body:has(#theme-toggle:checked) h3,
+body:has(#theme-toggle:checked) .brand-name {
+    color: #f3edff;
+}
+
+body:has(#theme-toggle:checked) p,
+body:has(#theme-toggle:checked) label,
+body:has(#theme-toggle:checked) nav a,
+body:has(#theme-toggle:checked) .muted {
+    color: #c4b8d3;
+}
+
+body:has(#theme-toggle:checked) input,
+body:has(#theme-toggle:checked) select,
+body:has(#theme-toggle:checked) textarea {
+    background: #191725;
+    color: #f3edff;
+    border-color: #514465;
+}
+
+body:has(#theme-toggle:checked) th {
+    background: #352b46;
+    color: #f3edff;
+}
+
+body:has(#theme-toggle:checked) td,
+body:has(#theme-toggle:checked) th {
+    border-color: #403653;
+}
+
+body:has(#theme-toggle:checked) .theme-button {
+    background: #302840;
+    color: #f3edff;
+    border-color: #5a496d;
+}
+
+body:has(#theme-toggle:checked) .outline,
+body:has(#theme-toggle:checked) .signup-link {
+    background: #302840;
+    color: #e5d4ff;
+    border-color: #72549a;
+}
+
+@media(max-width: 600px) {
+    .theme-button {
+        top: 10px;
+        right: 10px;
+        padding: 7px 10px;
+        font-size: 11px;
+    }
+}
