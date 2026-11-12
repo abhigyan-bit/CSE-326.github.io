@@ -1,7 +1,3 @@
-// LocalVibe beginner-level JavaScript (frontend demo only)
-// Signup saves the vendor details in this browser.
-// Login checks the saved email and password.
-// Dashboard displays the registered vendor name.
 
 const signupForm = document.getElementById("signupForm");
 
