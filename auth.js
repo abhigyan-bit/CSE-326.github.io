@@ -66,6 +66,13 @@ if (welcomeName) {
     window.location.href = "index.html";
   } else {
     welcomeName.textContent = "Hello, " + vendorName + "!";
+
+    if (localStorage.getItem("localVibeVendorEmail") === null) {
+      const savedVendor = JSON.parse(localStorage.getItem("localVibeVendor"));
+      if (savedVendor) {
+        localStorage.setItem("localVibeVendorEmail", savedVendor.email);
+      }
+    }
   }
 }
 
