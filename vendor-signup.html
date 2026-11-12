@@ -1,3 +1,74 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Vendor Registration | LocalVibe</title><link rel="stylesheet" href="style.css"></head>
-<body class="vendor-entry"><main class="auth-card signup-card"><a class="brand-lockup" href="index.html" aria-label="LocalVibe home"><svg class="brand-bag" viewBox="0 0 64 64" role="img" aria-label="LocalVibe shopping bag logo"><path d="M17 20h30l4 35H13l4-35Z" fill="#7132c8"/><path d="M23 22v-7a9 9 0 0 1 18 0v7" fill="none" stroke="#7132c8" stroke-width="5" stroke-linecap="round"/><path d="M32 44s-11-6.7-11-13.2a6.2 6.2 0 0 1 11-3.9 6.2 6.2 0 0 1 11 3.9C43 37.3 32 44 32 44Z" fill="#fff"/></svg><span class="brand-name">Local<span>Vibe</span></span></a><p class="eyebrow">JOIN OUR MARKETPLACE</p><h1>Register your store</h1><p class="muted">Enter your details to get started on LocalVibe.</p><form id="signupForm"><div class="two"><div><label for="owner">Owner Name</label><input id="owner" name="owner" type="text" placeholder="Your full name" required></div><div><label for="store">Store Name</label><input id="store" name="store" type="text" placeholder="Your business name" required></div><div><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" placeholder="Mobile number" required></div><div><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="you@example.com" required></div></div><label for="address">Store Address</label><textarea id="address" rows="2" placeholder="Shop address / city" required></textarea><label for="category">Main Business Category</label><select id="category" required><option value="">Select category</option><option>Clothing & Fashion</option><option>Handmade & Crafts</option><option>Food & Grocery</option><option>Home & Decor</option><option>Beauty & Personal Care</option><option>Electronics & Accessories</option><option>Other</option></select><label for="pass">Create Password</label><input id="pass" name="password" type="password" placeholder="Create a password" required><button class="btn full" type="submit">Create Vendor Account</button></form><p class="auth-bottom">Already registered? <a href="vendor-login.html">Login here</a></p><a class="back-link" href="index.html">← Back to Home</a><p class="demo-note">College project demo: details are saved only in this browser using localStorage. Do not use a real password.</p></main><script src="auth.js"></script></body></html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Vendor Registration | LocalVibe
+        </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="vendor-entry">
+        <main class="auth-card signup-card">
+            <a class="brand-lockup" href="index.html" aria-label="LocalVibe home"><svg class="brand-bag" viewBox="0 0 64 64" role="img" aria-label="LocalVibe shopping bag logo"><path d="M17 20h30l4 35H13l4-35Z" fill="#7132c8"/><path d="M23 22v-7a9 9 0 0 1 18 0v7" fill="none" stroke="#7132c8" stroke-width="5" stroke-linecap="round"/><path d="M32 44s-11-6.7-11-13.2a6.2 6.2 0 0 1 11-3.9 6.2 6.2 0 0 1 11 3.9C43 37.3 32 44 32 44Z" fill="#fff"/></svg><span class="brand-name">Local<span>Vibe</span></span></a>
+            <p class="eyebrow">
+                JOIN OUR MARKETPLACE
+            </p>
+            <h1>
+                Register your store
+            </h1>
+            <p class="muted">
+                Enter your details to get started on LocalVibe.
+            </p>
+            <form id="signupForm">
+                <div class="two">
+                    <div>
+                        <label for="owner">
+                            Owner Name
+                        </label>
+                        <input id="owner" name="owner" type="text" placeholder="Your full name" required>
+                    </div>
+                    <div>
+                        <label for="store">
+                            Store Name
+                        </label>
+                        <input id="store" name="store" type="text" placeholder="Your business name" required>
+                    </div>
+                    <div>
+                        <label for="phone">
+                            Phone Number
+                        </label>
+                        <input id="phone" name="phone" type="tel" placeholder="Mobile number" required>
+                    </div>
+                    <div>
+                        <label for="email">
+                            Email Address
+                        </label>
+                        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+                    </div>
+                </div>
+                <label for="address">
+                    Store Address
+                </label>
+                <textarea id="address" rows="2" placeholder="Shop address / city" required></textarea>
+                <label for="category">
+                    Main Business Category
+                </label>
+                <select id="category" required><option value="">Select category</option><option>Clothing & Fashion</option><option>Handmade & Crafts</option><option>Food & Grocery</option><option>Home & Decor</option><option>Beauty & Personal Care</option><option>Electronics & Accessories</option><option>Other</option></select>
+                <label for="pass">
+                    Create Password
+                </label>
+                <input id="pass" name="password" type="password" placeholder="Create a password" required><button class="btn full" type="submit">Create Vendor Account</button>
+            </form>
+            <p class="auth-bottom">
+                Already registered? <a href="vendor-login.html">Login here</a>
+            </p>
+            <a class="back-link" href="index.html">← Back to Home</a>
+            <p class="demo-note">
+                College project demo: details are saved only in this browser using localStorage. Do not use a real password.
+            </p>
+        </main>
+        <script src="auth.js">
+        </script>
+    </body>
+</html>
