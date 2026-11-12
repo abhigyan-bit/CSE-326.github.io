@@ -11,3 +11,16 @@ if (themeToggle) {
         }
     });
 }
+
+const passwordToggle = document.getElementById("show-password");
+const passwordInput = document.querySelector("[data-password-field]");
+
+if (passwordToggle && passwordInput) {
+    passwordToggle.addEventListener("change", function () {
+        if (passwordToggle.checked) {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
+    });
+}
