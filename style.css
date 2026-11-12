@@ -1007,3 +1007,17 @@ footer a {
     display:inline-flex;
     margin-bottom:24px
 }
+
+
+/* Product photos in the vendor dashboard */
+.product-thumb {
+    width:65px;
+    height:55px;
+    object-fit:cover;
+    border-radius:7px;
+    border:1px solid #e7daf5
+}
+
+#productsList td {
+    vertical-align:middle
+}
