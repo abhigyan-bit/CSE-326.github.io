@@ -1180,19 +1180,29 @@ body:has(#theme-toggle:checked) .status {
 
 
 /* Show password checkbox */
-.show-password {
+.show-password,
+.login-box .show-password {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 9px;
     width: fit-content;
-    margin: 10px 0 16px;
+    margin: 12px 0 16px;
     font-weight: normal;
     cursor: pointer;
 }
 
-.show-password input {
-    width: auto;
+.show-password input,
+.login-box .show-password input[type="checkbox"] {
+    display: inline-block;
+    width: 17px;
+    min-width: 17px;
+    height: 17px;
+    min-height: 17px;
     margin: 0;
     padding: 0;
+    border: 1px solid #9b83b5;
+    border-radius: 3px;
+    background: white;
     accent-color: #7132c8;
+    cursor: pointer;
 }
