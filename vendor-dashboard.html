@@ -45,7 +45,7 @@
                 </div>
                 <div class="stats">
                     <div class="stat">
-                        <strong>08</strong>Listed Products
+                        <strong id="listedCount">0</strong>Listed Products
                     </div>
                     <div class="stat">
                         <strong>05</strong>Orders Received
@@ -65,7 +65,7 @@
                 <p class="muted">
                     Add all the details so customers can understand your product.
                 </p>
-                <form action="#my-products" method="get">
+                <form id="productForm">
                     <div class="product-fields">
                         <div>
                             <label for="product-name">
@@ -101,7 +101,7 @@
                             <label for="image">
                                 Product Image
                             </label>
-                            <input id="image" name="image" type="file" accept="image/*">
+                            <input id="image" name="image" type="file" accept="image/*" required>
                         </div>
                         <div>
                             <label for="condition">
@@ -126,7 +126,7 @@
                         <button class="btn" type="submit">Submit Product</button><button class="btn outline" type="reset">Clear Form</button>
                     </div>
                     <p class="demo-note">
-                        Demo form: product details are not saved because this project has no database or JavaScript.
+                        Your product will be saved in this browser and shown below.
                     </p>
                 </form>
             </section>
@@ -137,81 +137,30 @@
                             My Listed Products
                         </h2>
                         <p class="muted">
-                            Example products displayed in your store.
+                            Products that you have added to your store.
                         </p>
                     </div>
                     <a class="btn outline" href="#add-product">+ Add Product</a>
                 </div>
                 <div class="tablebox">
                     <table>
-                        <tr>
-                            <th>
-                                Product
-                            </th>
-                            <th>
-                                Category
-                            </th>
-                            <th>
-                                Price
-                            </th>
-                            <th>
-                                Stock
-                            </th>
-                            <th>
-                                Status
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                Handmade Scrunchies
-                            </td>
-                            <td>
-                                Fashion
-                            </td>
-                            <td>
-                                ₹99
-                            </td>
-                            <td>
-                                25
-                            </td>
-                            <td>
-                                <span class="status">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Jute Tote Bag
-                            </td>
-                            <td>
-                                Bags
-                            </td>
-                            <td>
-                                ₹249
-                            </td>
-                            <td>
-                                10
-                            </td>
-                            <td>
-                                <span class="status">Active</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Lavender Candle
-                            </td>
-                            <td>
-                                Home Decor
-                            </td>
-                            <td>
-                                ₹299
-                            </td>
-                            <td>
-                                8
-                            </td>
-                            <td>
-                                <span class="status">Active</span>
-                            </td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>Photo</th>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Condition</th>
+                                <th>Delivery</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsList">
+                            <tr>
+                                <td colspan="8">No products added yet.</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </section>
@@ -273,5 +222,6 @@
             </div>
         </footer>
         <script src="auth.js"></script>
+        <script src="products.js"></script>
     </body>
 </html>
