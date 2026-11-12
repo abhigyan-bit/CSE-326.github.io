@@ -1206,3 +1206,22 @@ body:has(#theme-toggle:checked) .status {
     accent-color: #7132c8;
     cursor: pointer;
 }
+
+
+/* Visible show and hide password button */
+.password-toggle {
+    display: block;
+    margin: 7px 0 16px auto;
+    padding: 6px 14px;
+    border: 1px solid #cdb2e8;
+    border-radius: 7px;
+    background: #f7f0ff;
+    color: #6730a9;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    background: #eee1ff;
+}
