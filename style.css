@@ -1140,3 +1140,40 @@ body:has(#theme-toggle:checked) .signup-link {
         font-size: 11px;
     }
 }
+
+/* Dark mode support for both dashboards */
+body:has(#theme-toggle:checked) .dashboard-welcome,
+body:has(#theme-toggle:checked) .section-heading,
+body:has(#theme-toggle:checked) #overview,
+body:has(#theme-toggle:checked) #vendors,
+body:has(#theme-toggle:checked) #products,
+body:has(#theme-toggle:checked) #orders {
+    color: #eee8f7;
+}
+
+body:has(#theme-toggle:checked) .product-form-panel,
+body:has(#theme-toggle:checked) .layout > div > section {
+    background: #242033;
+    border-color: #403653;
+    color: #eee8f7;
+}
+
+body:has(#theme-toggle:checked) .dashboard-welcome .muted,
+body:has(#theme-toggle:checked) .section-heading .muted,
+body:has(#theme-toggle:checked) .product-form-panel .demo-note {
+    color: #c4b8d3;
+}
+
+body:has(#theme-toggle:checked) .eyebrow {
+    color: #c9a5f2;
+}
+
+body:has(#theme-toggle:checked) .side {
+    background: #201a30;
+    border: 1px solid #403653;
+}
+
+body:has(#theme-toggle:checked) .status {
+    background: #23412d;
+    color: #b8f0c5;
+}
