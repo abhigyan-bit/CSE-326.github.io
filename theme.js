@@ -12,15 +12,19 @@ if (themeToggle) {
     });
 }
 
-const passwordToggle = document.getElementById("show-password");
+const passwordToggle = document.querySelector(".password-toggle");
 const passwordInput = document.querySelector("[data-password-field]");
 
 if (passwordToggle && passwordInput) {
-    passwordToggle.addEventListener("change", function () {
-        if (passwordToggle.checked) {
+    passwordToggle.addEventListener("click", function () {
+        if (passwordInput.type === "password") {
             passwordInput.type = "text";
+            passwordToggle.textContent = "Hide";
+            passwordToggle.setAttribute("aria-label", "Hide password");
         } else {
             passwordInput.type = "password";
+            passwordToggle.textContent = "Show";
+            passwordToggle.setAttribute("aria-label", "Show password");
         }
     });
 }
