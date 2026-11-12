@@ -2,6 +2,12 @@ const productForm = document.getElementById("productForm");
 const productsList = document.getElementById("productsList");
 const listedCount = document.getElementById("listedCount");
 
+function safeText(value) {
+    return String(value).replace(/[&<>"']/g, function (letter) {
+        return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[letter];
+    });
+}
+
 function showProducts() {
     const products = JSON.parse(localStorage.getItem("localVibeProducts") || "[]");
     const email = localStorage.getItem("localVibeVendorEmail");
@@ -20,9 +26,9 @@ function showProducts() {
     myProducts.forEach(function (product) {
         productsList.innerHTML +=
             '<tr><td><img class="product-thumb" src="' + product.image + '" alt="Product photo"></td>' +
-            '<td>' + product.name + '</td><td>' + product.category + '</td>' +
-            '<td>₹' + product.price + '</td><td>' + product.quantity + '</td>' +
-            '<td>' + product.condition + '</td><td>' + product.delivery + '</td>' +
+            '<td>' + safeText(product.name) + '</td><td>' + safeText(product.category) + '</td>' +
+            '<td>₹' + safeText(product.price) + '</td><td>' + safeText(product.quantity) + '</td>' +
+            '<td>' + safeText(product.condition) + '</td><td>' + safeText(product.delivery) + '</td>' +
             '<td><span class="status">Active</span></td></tr>';
     });
 }
@@ -37,6 +43,11 @@ if (productForm) {
 
         if (!image || !image.type.startsWith("image/")) {
             alert("Please select a product photo.");
+            return;
+        }
+
+        if (image.size > 700000) {
+            alert("Please choose an image smaller than 700 KB.");
             return;
         }
 
@@ -57,11 +68,15 @@ if (productForm) {
 
             const products = JSON.parse(localStorage.getItem("localVibeProducts") || "[]");
             products.push(product);
-            localStorage.setItem("localVibeProducts", JSON.stringify(products));
 
-            alert("Product added successfully!");
-            productForm.reset();
-            showProducts();
+            try {
+                localStorage.setItem("localVibeProducts", JSON.stringify(products));
+                alert("Product added successfully!");
+                productForm.reset();
+                showProducts();
+            } catch (error) {
+                alert("Storage is full. Please use a smaller photo.");
+            }
         };
 
         reader.readAsDataURL(image);
