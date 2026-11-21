@@ -1,0 +1,81 @@
+/* Simple styling for the shopping cart page */
+
+.cart-section {
+    padding-top: 25px;
+    padding-bottom: 40px;
+}
+
+.cart-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+.cart-summary {
+    margin: 0;
+}
+
+.cart-summary h2 {
+    color: #6829bd;
+    margin-bottom: 20px;
+}
+
+.cart-summary p {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 14px 0;
+}
+
+.cart-summary hr {
+    border: 0;
+    border-top: 1px solid #e7daf5;
+    margin: 18px 0;
+}
+
+.cart-summary h3 {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 19px;
+}
+
+.cart-summary h3 strong {
+    color: #6829bd;
+}
+
+.place-order {
+    display: block;
+    text-align: center;
+    margin-top: 22px;
+}
+
+.cart-summary .note {
+    margin-top: 12px;
+    display: block;
+}
+
+.continue-link {
+    display: inline-block;
+    color: #6829bd;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+@media (max-width: 800px) {
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-summary {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    th, td {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
