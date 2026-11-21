@@ -1,94 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Cart | LocalVibe</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="cart.css">
-</head>
-<body>
-    <header>
-        <div class="wrap nav">
-            <a class="logo" href="index.html">♥ Local<span>Vibe</span></a>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="cart.html">My Cart</a>
-                <a href="vendor-dashboard.html">Vendors</a>
-                <a href="tracking.html">Track Order</a>
-                <a href="admin-dashboard.html">Admin</a>
-            </nav>
-            <a class="btn outline" href="register.html">Login / Sign Up</a>
-        </div>
-    </header>
-
-    <section class="title">
-        <div class="wrap">
-            <h1>My Shopping Cart</h1>
-            <p>Check your selected products before placing your order.</p>
-        </div>
-    </section>
-
-    <main class="wrap cart-section">
-        <div class="cart-layout">
+    <head>
+        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Shopping Cart | LocalVibe
+        </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <input type="checkbox" id="theme-toggle" class="theme-checkbox">
+        <label for="theme-toggle" class="theme-button">☾ Dark / ☀ Light</label>
+        <header>
+            <div class="wrap nav">
+                <a class="logo" href="index.html">♥ Local<span>Vibe</span></a>
+                <nav>
+                    <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="vendor-dashboard.html">Vendors</a><a href="tracking.html">Track Order</a><a href="admin-dashboard.html">Admin</a>
+                </nav>
+                <a class="btn outline" href="register.html">Login / Sign Up</a>
+            </div>
+        </header>
+        <section class="title">
+            <div class="wrap">
+                <h1>
+                    Shopping Cart
+                </h1>
+            </div>
+        </section>
+        <main class="wrap section">
             <div class="tablebox">
                 <table>
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Handmade Scrunchies</td>
-                            <td>₹99</td>
-                            <td>2</td>
-                            <td>₹198</td>
-                        </tr>
-                        <tr>
-                            <td>Jute Tote Bag</td>
-                            <td>₹249</td>
-                            <td>1</td>
-                            <td>₹249</td>
-                        </tr>
-                        <tr>
-                            <td>Scented Candle</td>
-                            <td>₹299</td>
-                            <td>1</td>
-                            <td>₹299</td>
-                        </tr>
-                    </tbody>
+                    <tr>
+                        <th>
+                            Product
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            Quantity
+                        </th>
+                        <th>
+                            Total
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Lavender Scented Candle
+                        </td>
+                        <td>
+                            ₹299
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            ₹299
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Handmade Scrunchies
+                        </td>
+                        <td>
+                            ₹99
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            ₹198
+                        </td>
+                    </tr>
                 </table>
             </div>
-
-            <div class="panel cart-summary">
-                <h2>Order Summary</h2>
-                <p><span>Subtotal</span><strong>₹746</strong></p>
-                <p><span>Delivery Charges</span><strong>₹40</strong></p>
-                <hr>
-                <h3><span>Total Amount</span><strong>₹786</strong></h3>
-                <a class="btn place-order" href="tracking.html">Place Order</a>
-                <p class="muted note">Demo checkout only. No real payment is processed.</p>
-                <a class="continue-link" href="shop.html">Continue Shopping</a>
+            <div class="panel" style="max-width:360px;margin:20px 0 0 auto">
+                <h2>
+                    Order Summary
+                </h2>
+                <p>
+                    Subtotal: <b style="float:right">₹497</b>
+                </p>
+                <p>
+                    Delivery: <b style="float:right">₹40</b>
+                </p>
+                <hr style="margin:12px 0">
+                <h3>
+                    Total: <span style="float:right;color:#6829bd">₹537</span>
+                </h3>
+                <a class="btn" style="display:block;text-align:center;margin-top:15px" href="tracking.html">Place Order</a>
+                <p class="muted" style="margin-top:10px">
+                    Demo checkout only. No real payment is processed.
+                </p>
             </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="wrap foot">
-            <b>♥ LocalVibe</b>
-            <div>
-                <a href="index.html">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="cart.html">My Cart</a>
-                <a href="vendor-dashboard.html">Vendors</a>
+        </main>
+        <footer>
+            <div class="wrap foot">
+                <b>♥ LocalVibe</b>
+                <div>
+                    <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="vendor-dashboard.html">Vendors</a><a href="register.html">Contact</a>
+                </div>
+                <small>© 2026 LocalVibe · Shop Local. Support Local.</small>
             </div>
-            <small>© 2026 LocalVibe · Shop Local. Support Local.</small>
-        </div>
-    </footer>
-</body>
+        </footer>
+            <script src="theme.js"></script>
+    </body>
 </html>
